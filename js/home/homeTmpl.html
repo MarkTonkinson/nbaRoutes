@@ -1,3 +1,20 @@
 <div class="inner-container">
+	<div class = 'team-container' ng-repeat="team for team in teams">
+		<div class="logo">
+    	<img ng-src={{logoPath}}>
+  		</div>
+	  	<div class="record">
+	      <h1> Wins: {{teamData.wins}} Losses: {{teamData.losses}} </h1>
+	  	</div>
+
+	  	<div class="team-data">
+		    <div class="game" ng-repeat="game in teamData" ng-class="{'even' : $index % 2 === 0}">
+		      Date: {{game.createdAt | date: 'short'}} <br />
+
+		      {{homeTeam}} - {{game.homeTeamScore}}<br />
+		      {{game.opponent}} - {{game.opponentScore}} </br />
+		    </div>
+	  	</div>
+	</div>
 
 </div>
